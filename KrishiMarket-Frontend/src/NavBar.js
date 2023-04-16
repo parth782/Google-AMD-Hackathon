@@ -19,10 +19,10 @@ class NavBar extends Component {
 
         return (
             <header className='clearfix'>
-                <h2>
-                    <Link to="/">
-                        Farmers-bazaar
-                </Link>
+                <h2 >
+                    <Link to="/" style={{fontSize:'35px'}}>
+                        Krishi Market
+                    </Link>
                 </h2>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">

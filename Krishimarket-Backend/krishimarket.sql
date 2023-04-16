@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2023 at 08:23 PM
+-- Generation Time: Apr 16, 2023 at 03:49 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `farmerbazaar`
+-- Database: `krishimarket`
 --
 
 -- --------------------------------------------------------
@@ -63,6 +63,8 @@ CREATE TABLE `users` (
   `city` text NOT NULL,
   `state` text NOT NULL,
   `zip` text NOT NULL,
+  `upi_id` text DEFAULT NULL,
+  `mobile_no` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -71,9 +73,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `password`, `farm_name`, `street_address`, `city`, `state`, `zip`, `created_at`, `updated_at`) VALUES
-(1, 'Parth', '$2a$12$yoxVGEXDA8Nn/Ce12XP2DuRA7gb.axe3NDhOyM4ufyW/OQJf8K8zi', 'Hello World', 'Delhi', 'Delhi', 'Delhi', '110035', '2023-04-10 12:35:06', '2023-04-10 12:35:06'),
-(2, 'CodeInitiator', '$2a$12$VWGI9xGYlbp/qXUmOteybu2UcCWok0SxVB852B4yIQmpYYk2X2uYC', 'Hello World', 'Pacific Street', 'Delhi', 'Delhi', '110035', '2023-04-11 17:57:07', '2023-04-11 17:57:07');
+INSERT INTO `users` (`id`, `user_name`, `password`, `farm_name`, `street_address`, `city`, `state`, `zip`, `upi_id`, `mobile_no`, `created_at`, `updated_at`) VALUES
+(1, 'Parth', '$2a$12$yoxVGEXDA8Nn/Ce12XP2DuRA7gb.axe3NDhOyM4ufyW/OQJf8K8zi', 'Hello World', 'Delhi', 'Delhi', 'Delhi', '110035', '12345@paytm', '1234567890', '2023-04-10 12:35:06', '2023-04-16 13:46:42'),
+(2, 'CodeInitiator', '$2a$12$VWGI9xGYlbp/qXUmOteybu2UcCWok0SxVB852B4yIQmpYYk2X2uYC', 'Hello World', 'Pacific Street', 'Delhi', 'Delhi', '110035', '45678@paytm', '0987654321', '2023-04-11 17:57:07', '2023-04-16 13:46:48');
 
 --
 -- Indexes for dumped tables

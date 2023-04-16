@@ -66,8 +66,8 @@ class Contact extends React.Component {
                             <td>{this.state.itemsByUserId.farm_name} </td>
                             <td>{this.state.itemsByUserId.street_address} </td>
                             <td>{this.state.itemsByUserId.city} </td>
-                            <td>{this.state.itemsByUserId.state} </td>
-                            <td>{this.state.itemsByUserId.zip} </td>
+                            <td>{this.state.itemsByUserId.upi_id} </td>
+                            <td>{this.state.itemsByUserId.mobile_no} </td>
                         </tr>
                         </tbody>
 
@@ -92,17 +92,18 @@ class Contact extends React.Component {
                         Farm name
                     </th>
                     <th>
-                        Street address
+                        Farm Address
                     </th>
 
                     <th>
                         City
                     </th>
+                   
                     <th>
-                        State
+                      UPI-ID
                     </th>
                     <th>
-                        ZIP
+                        Mobile No
                     </th>
 
                 </tr>

@@ -2,7 +2,7 @@
 CSS reset
 Is a short set of CSS rules that resets the styling of all HTML elements to a consistent baseline so the website will look the same on all browsers
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +10,7 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
   font-size: 100%;
   /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
   box-sizing: border-box;
+  
   /*reset Chrome user agent styles*/
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
@@ -30,7 +31,7 @@ body {
   /* border: 3px solid white; */
   margin: 0;
   padding: 0;
-  font-family: 'aglet-slab', sans-serif;
+  font-family: 'Montserrat', sans-serif;;
   text-align: center;
   font-size: normal;
 }
@@ -64,6 +65,7 @@ button {
   border: 1px solid #747070;
   border-radius: 190px;
   width: 13%;
+  font-weight: bolder;
 }
 
 button:hover {
@@ -71,6 +73,7 @@ button:hover {
   background-color: lightskyblue;
   cursor: pointer;
   color: black;
+  
 }
 
 /* Add a blue text color to links */
@@ -80,22 +83,25 @@ a {
   text-decoration: none;
   color: rgb(71, 30, 255);
   padding: 15px;
+  font-weight: bolder;
 }
 
 a:hover {
   color: purple;
+  font-weight: bolder;
 }
 
 h1 {
   text-align: center;
   font-size: 20px;
+  font-weight: bolder;
 }
 
 h2 {
   /* text-align:center; 
   font-size: 40px; */
   /* font-family: 'skolar-sans-latin-extended', sans-serif; */
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 2.25rem;
@@ -103,7 +109,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'skolar-sans-latin-extended', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 2rem;
@@ -111,7 +117,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'aglet-slab', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.0625rem;
@@ -121,7 +127,7 @@ h4 {
 }
 
 h5 {
-  font-family: 'aglet-slab', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.09rem;
@@ -132,7 +138,7 @@ h5 {
 }
 
 p {
-  font-family: 'aglet-slab', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.0625rem;
@@ -148,7 +154,7 @@ Header styles (Main Module)
 */
 
 header {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   text-align: center;
   width: 100%;
   padding: 14px;
@@ -182,7 +188,7 @@ Content styles (Main Module)
 */
 
 .landing-main {
-  background-image: url('background-img.jpg')!important;
+  background-image: url('background-image.jpg')!important;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -212,7 +218,7 @@ Content styles (Main Module)
   margin: 15px 0px;
   margin-left: 30%;
   margin-right: 30%;
-  background-color: pink;
+  background-color:#69ca89;
   color: black;
   padding: 10px 5px;
   text-align: center;
@@ -227,7 +233,7 @@ Content styles (Main Module)
   margin: 15px 0px;
   margin-left: 30%;
   margin-right: 30%;
-  background-color: pink;
+  background-color: #69ca89;
   color: black;
   padding: 10px 5px;
   text-align: center;
@@ -235,6 +241,10 @@ Content styles (Main Module)
   font-size: 15px;
   border: 1px solid #361f1f;
   border-radius: 19px;
+}
+.show-button:hover {
+  /* opacity: 1; */
+  background-color: #FDDA0D;
 }
 .button-wrapper {
   text-align: center;
@@ -253,7 +263,7 @@ margin-left: 0;
 
 .signup-button {
   margin: 15px 0px;
-  background-color: pink;
+  background-color:#69ca89;
   color: black;
   padding: 10px 5px;
   text-align: center;
@@ -269,33 +279,116 @@ margin-left: 0;
 
 .go-button:hover {
   /* opacity: 1; */
-  background-color: lightskyblue;
+  background-color: #FDDA0D;
   cursor: pointer;
   color: black;
+}
+
+.Fast{
+  /* width: 100%; */
+  background-image: url('background-image.jpg')!important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ 
+}
+
+.AddParent{
+  background-image: url('background-image.jpg')!important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .Login {
   font-size: 20px;
   text-decoration: none;
-  color: black;
-  padding: 5px;
+  color: white;
+  padding: 20px 20px;
   text-align: center;
   display: block;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
+
+
+  overflow: auto;
+  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+
+
+  
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
 }
 
 .Login h2 {
   padding-bottom: 1em;
+  color: white;
 }
 
-.Login .demo {
-  line-height: 1.2rem;
-  font-size: 75%;
-  padding: 0;
-}
+
 
 .Login form {
   width: 90%;
@@ -314,7 +407,7 @@ margin-left: 0;
 .Register {
   font-size: 20px;
   text-decoration: none;
-  color: black;
+  color: white;
   padding: 5px;
   text-align: center;
   display: block;
@@ -322,6 +415,12 @@ margin-left: 0;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
+
+  overflow: auto;
+  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
 }
 
 .Register form {
@@ -335,6 +434,7 @@ margin-left: 0;
 
 .Register h2 {
   padding-bottom: 1em;
+  color: white;
 }
 
 
@@ -342,14 +442,20 @@ margin-left: 0;
 .AddItems {
   font-size: 20px;
   text-decoration: none;
-  color: black;
-  padding: 5px;
+  color: white;
+  padding: 20px 20px;
   text-align: center;
   display: block;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
+
+  overflow: auto;
+  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
 }
 
 .AddItems input {
@@ -396,6 +502,7 @@ margin-left: 0;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
+  font-weight: bolder;
 }
 
 /* inventoryTable component */
@@ -415,7 +522,7 @@ margin-left: 0;
 }
 
 .nav h2 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* NavBar component */

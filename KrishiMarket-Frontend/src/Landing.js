@@ -9,6 +9,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className = 'landing-main'>
+       
         <div className="Landing">
           <section id="landingPage">
             <div id="description">
@@ -20,6 +21,7 @@ class Landing extends React.Component {
           </section>
           <Footer />
         </div>
+
       </div>
 
     );

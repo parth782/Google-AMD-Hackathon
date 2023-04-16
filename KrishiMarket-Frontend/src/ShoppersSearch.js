@@ -104,7 +104,7 @@ class ShoppersSearch extends React.Component {
                                 <td>{item.description} </td>
                                 <td>{item.itemPrice} </td>
                                 <td>{item.itemCount} </td>
-                                <td><Link to={itemDetailsUrl}>contact </Link></td>
+                                <td><Link to={itemDetailsUrl}>Contact </Link></td>
                             </tr>
                         </tbody>
                     )
@@ -142,8 +142,11 @@ class ShoppersSearch extends React.Component {
 
                         <div className="button-wrapper">
                             <button
+                                
                                 className="go-button"
                                 type="submit"
+                                style={{fontWeight: '100' }
+                            }
                             >
                                 Search
                         </button>

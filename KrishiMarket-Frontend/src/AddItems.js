@@ -176,6 +176,7 @@ class AddItems extends React.Component {
 
     render() {
         return (
+            <div className="AddParent">
             <div className="AddItems">
                 <section id="AddItemsPage">
                     <form className="additemForm" onSubmit={this.addItem}>
@@ -184,7 +185,7 @@ class AddItems extends React.Component {
                             type="text"
                             id="itemName"
                             name="itemName"
-                            placeholder="Tomatoes"
+                            placeholder="itemName"
                             onChange={(e) =>
                                 this.changeItemName(e.target.value)
                             }
@@ -256,6 +257,7 @@ class AddItems extends React.Component {
                         </button>
                     </form>
                 </section>
+            </div>
             </div>
         );
     }

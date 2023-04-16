@@ -25,6 +25,8 @@ usersRouter
             street_address,
             city,
             state,
+            upi_id,
+            mobile_no,
             zip } = req.body
 
         console.log("user_name:", user_name, "password-->", password, '<---');
@@ -62,6 +64,8 @@ usersRouter
                             street_address,
                             city,
                             state,
+                            upi_id,
+                            mobile_no,
                             zip
                         }
                         console.log(newUser, 'new user payload')

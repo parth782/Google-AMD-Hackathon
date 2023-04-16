@@ -34,27 +34,28 @@ class Login extends React.Component {
 
     validateUserName() {
         const userName = this.state.userName.value.trim();
-        if (userName.length === 0) {
-            return "Username is required"
-        } else if (userName.length < 2) {
+         if (userName.length < 2&&userName.length > 0) {
             return (
-                    "Username must be at least 2 characters long"
+                <div style={{color:'white'}}>
+                Username must be at least 2 characters long
+                </div>
             );
         }
     }
 
     validatePassword() {
         const password = this.state.password.value.trim();
-        if (password.length === 0) {
-            return <p className="input-error">Password is required</p>;
-        } else if (password.length < 6 || password.length > 72) {
+         if ((password.length < 6 || password.length > 72)&&(password.length > 0)) {
             return (
-                    "Password must be between 6 and 72 characters long."
+                <div style={{color:'white'}}>
+                Incorrect Password! Password must be between 6 and 72 characters long.
+                </div>
             );
-        } else if (!password.match(/[0-9]/)) {
+        } else if (!password.match(/[0-9]/)&&(password.length > 0)) {
             return (
-
-                    "Password must contain at least one number."
+                <div style={{color:'white'}}>
+                Password must contain at least one number.
+                </div>
 
             );
         }
@@ -70,7 +71,7 @@ class Login extends React.Component {
         })
 
             .then((response) => {
-               // console.log("response ID", response);
+                // console.log("response ID", response);
 
                 TokenService.saveAuthToken(response.authToken);
                 TokenService.saveUserId(response.userId);
@@ -78,85 +79,90 @@ class Login extends React.Component {
             })
             .catch((err) => {
                 this.setState({
-            error: "Username or password is invalid"
+                    error: "Username or password is invalid"
                 })
                 // console.log(err);
             });
     };
 
     render() {
-        const msg = this.state.error ? <p>
+        const msg = this.state.error ? <p style={{color:'white'}}>
             {this.state.error}
-        </p>:
-        <div></div>;
+        </p> :
+            <div></div>;
         return (
-            <div className="Login">
-                <section id="loginPage">
-                    <h2>Login</h2>
-                    <p className = "demo">To view a demo:</p>
-                    <p className = "demo">email: JohnySmith</p>
-                    <p className = "demo">password: 123456</p>
+            <div className="Fast">
+                <div className="Login">
 
-                    <form className="loginForm" onSubmit={this.loginUser}>
-                    <div className = "errorMessage">
-                        {msg}
+                    <section id="loginPage">
+                        <h2 style={{padding:'7px'}}>Login</h2>
+
+                        <form className="loginForm" onSubmit={this.loginUser}>
+                            <div className="errorMessage" style={{color:'white'}}>
+                                {msg}
+                            </div>
+                            <label htmlFor="userName">Username</label>
+                            <input
+                                type="text"
+                                id="userName"
+                                name="userName"
+                                placeholder="Username"
+                                onChange={(e) =>
+                                    this.changeUsername(e.target.value)
+                                }
+                                required
+                            />
+                            {this.state.userName.touched && (
+                                <ValidationError
+                                    message={this.validateUserName()}
+                                />
+                            )}
+                            <ValidationError
+                                message={this.validateUserName()}
+                            />
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="Password"
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                                onChange={(e) =>
+                                    this.changePassword(e.target.value)
+                                }
+                                required
+                            />
+                            {this.state.password.touched && (
+                                <ValidationError
+                                    message={this.validatePassword()}
+                                />
+                            )}
+                            <ValidationError
+                                message={this.validatePassword()}
+                            />
+
+
+                            <button
+                                className="go-button"
+                                type="submit"
+                            >
+                                Go
+                            </button>
+                            <div className="signUp">
+                                <p style={{color:'white'}}>
+                                    Do not have an account?{" "}
+                                </p>
+                                <p>
+                                    <a href="/signup" style={{color:'white',textDecoration:'underline'}}>Sign up here</a>
+                                </p>
+                            </div>
+                        </form>
+                    </section>
+                    <div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
                     </div>
-                        <label htmlFor="userName">Username</label>
-                        <input
-                            type="text"
-                            id="userName"
-                            name="userName"
-                            placeholder="Username"
-                            onChange={(e) =>
-                                this.changeUsername(e.target.value)
-                            }
-                            required
-                        />
-                        {this.state.userName.touched && (
-                            <ValidationError
-                                message={this.validateUserName()}
-                            />
-                        )}
-                        <ValidationError
-                                message={this.validateUserName()}
-                            />
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="Password"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            onChange={(e) =>
-                                this.changePassword(e.target.value)
-                            }
-                            required
-                        />
-                        {this.state.password.touched && (
-                            <ValidationError
-                                message={this.validatePassword()}
-                            />
-                        )}
-                        <ValidationError
-                                message={this.validatePassword()}
-                            />
-
-
-                        <button
-                            className="go-button"
-                            type="submit"
-                        >
-                            Go
-                        </button>
-                        <div className="signUp">
-                            <p>
-                                Do not have an account?{" "}
-                            </p>
-                            <p>
-                            <a href="/signup">Sign up here</a>
-                            </p>
-                        </div>
-                    </form>
-                </section>
+                </div>
             </div>
         );
     }

@@ -21,7 +21,7 @@ const TokenService = {
         return window.sessionStorage.setItem('user_id', userId);
     },
     getUserId(user_id) {
-        return window.sessionStorage.getItem('user_id', user_id)
+        return window.sessionStorage.getItem('user_id');
     }
 
 }
