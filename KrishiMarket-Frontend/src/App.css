@@ -1,0 +1,514 @@
+/* -------------------------------------
+CSS reset
+Is a short set of CSS rules that resets the styling of all HTML elements to a consistent baseline so the website will look the same on all browsers
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+  box-sizing: border-box;
+  /*reset Chrome user agent styles*/
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0px;
+  -webkit-padding-after: 0px;
+  -webkit-padding-start: 0px;
+  -webkit-padding-end: 0px;
+}
+
+/* -------------------------------------
+General styles (General Module, wrapping around the modules below)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body {
+  /* border: 3px solid white; */
+  margin: 0;
+  padding: 0;
+  font-family: 'aglet-slab', sans-serif;
+  text-align: center;
+  font-size: normal;
+}
+
+/* Full-width input fields */
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-flex;
+  border: none;
+  background: white;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  background-color: #ddd;
+}
+
+/* Set a style for the submit button */
+
+button {
+ 
+  margin: 15px 0px;
+  background-color: pink;
+  color: black;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #747070;
+  border-radius: 190px;
+  width: 13%;
+}
+
+button:hover {
+  /* opacity: 1; */
+  background-color: lightskyblue;
+  cursor: pointer;
+  color: black;
+}
+
+/* Add a blue text color to links */
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(71, 30, 255);
+  padding: 15px;
+}
+
+a:hover {
+  color: purple;
+}
+
+h1 {
+  text-align: center;
+  font-size: 20px;
+}
+
+h2 {
+  /* text-align:center; 
+  font-size: 40px; */
+  /* font-family: 'skolar-sans-latin-extended', sans-serif; */
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.25rem;
+  color: #4B6182;
+}
+
+h3 {
+  font-family: 'skolar-sans-latin-extended', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #292d33;
+}
+
+h4 {
+  font-family: 'aglet-slab', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 2rem;
+  color: #373E40;
+  padding-top: 15px;
+}
+
+h5 {
+  font-family: 'aglet-slab', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.09rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #373E40;
+  padding-top: 15px;
+}
+
+p {
+  font-family: 'aglet-slab', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 2rem;
+  color: #373E40;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* -------------------------------------
+Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
+*/
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 14px;
+  border-bottom: 1px solid lightgrey;
+  display: block;
+}
+
+header nav {
+  display: block;
+  width: 100%;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  width: auto;
+}
+
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 100% !important;
+}
+
+/* -------------------------------------
+Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+.landing-main {
+  background-image: url('background-img.jpg')!important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  margin: 0;
+  /* height: 100vh; */
+}
+
+.Landing {
+  max-width: 1600px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 72px;
+  text-align: left;
+}
+#description {
+  margin-bottom: 50px;
+}
+
+
+.go-button {
+  margin: 15px 0px;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: pink;
+  color: black;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #361f1f;
+  border-radius: 190px;
+  width: 30%;
+}
+
+.show-button{
+  margin: 15px 0px;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: pink;
+  color: black;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #361f1f;
+  border-radius: 19px;
+}
+.button-wrapper {
+  text-align: center;
+
+}
+.button-wrapper button, .button-wrapper a {
+display: inline-block;
+width:30%;
+margin-right: 0;
+margin-left: 0;
+}
+
+.button-wrapper a {
+  margin-left:10%;
+}
+
+.signup-button {
+  margin: 15px 0px;
+  background-color: pink;
+  color: black;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #361f1f;
+  border-radius: 190px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.go-button:hover {
+  /* opacity: 1; */
+  background-color: lightskyblue;
+  cursor: pointer;
+  color: black;
+}
+
+.Login {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.Login h2 {
+  padding-bottom: 1em;
+}
+
+.Login .demo {
+  line-height: 1.2rem;
+  font-size: 75%;
+  padding: 0;
+}
+
+.Login form {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.Login input {
+  border: solid 1px;
+}
+
+.errorMessage {
+  color:red;
+}
+
+
+.Register {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.Register form {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.Register input {
+  border: solid 1px;
+}
+
+.Register h2 {
+  padding-bottom: 1em;
+}
+
+
+/* AddItems component */
+.AddItems {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.AddItems input {
+  border: solid 1px;
+}
+
+/* AddItems component */
+
+
+/* itemDetails component */
+.itemDetails {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.itemDetails input {
+  border: solid 1px;
+}
+
+.itemDetails li {
+  list-style-type: none;
+}
+
+/* itemDetails component */
+
+
+/* inventoryTable component */
+.inventoryTable{
+  table-layout: auto;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inventoryTable tbody tr td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* inventoryTable component */
+
+/* NavBar component */
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 13px;
+  overflow: hidden;
+  /* float: right; */
+  width: 100%;
+  height: auto;
+  /* display: inline-flex;
+  justify-content: flex-end; */
+}
+
+.nav h2 {
+  font-family: 'Pacifico', cursive;
+}
+
+/* NavBar component */
+
+
+/* -------------------------------------
+Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
+
+.Footer {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 14px;
+  border-top: 1px solid lightgrey;
+  display: block;
+  list-style-type: none;
+}
+
+.Footer li {
+  display: inline-block;
+}
+
+.Footer li a {
+  text-decoration: none;
+  font-size: 170%;
+}
+
+.Footer li a:hover {
+  color: red;
+}
+
+/* -------------------------------------
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles below this line
+*/
+
+/*large desktop*/
+
+@media only screen and (max-width: 1600px) {
+  /* body {
+    border: 3px solid yellow;
+  } */
+}
+
+/*iPad lanscape / small laptop*/
+
+@media only screen and (max-width: 1024px) {
+  /* body {
+    border: 3px solid blue;
+  } */
+}
+
+/*iPad potrait*/
+
+@media only screen and (max-width: 768px) {
+  /* body {
+    border: 3px solid red;
+  } */
+}
+
+/*Android landscape*/
+
+@media only screen and (max-width: 640px) {
+  /* body {
+    border: 3px solid brown;
+  } */
+  button {
+    padding: 15px 5px;
+    font-size: 14px;
+    width: 30%;
+  }
+}
+
+/*iPhone landscape*/
+
+@media only screen and (max-width: 480px) {
+  body {
+    border: 3px solid green;
+    height: 100vh;
+  }
+  a {
+    padding: 5px;
+  }
+}
+
+/*iPhone portrait*/
+
+@media only screen and (max-width: 320px) {
+  body {
+    border: 3px solid purple;
+  }
+}
