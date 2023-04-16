@@ -17,7 +17,7 @@ In Conventional Supply Chain as shown in the figure below, Farmers do not sell d
 ## Problem Solution:
 Therefore to solve this problem, we the team **Binary Developers** have decided to come up with a solution of making a web application which will not only reduce the dependency of Farmers on Middlemen but also help them to sell their crops to *retailers, wholesalers, consumers* at a better price. Not only this but this web app would help them to keep track of all their transactions.
 
-<img width="250px" align="center" alt="Tech Based Suppy Chain" src="">
+<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/ParthJohri/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/krishimarketsolution.png">
 
 ### STEPS TO SETUP LOCAL BUILD OF FRONTEND:
 <hr>
