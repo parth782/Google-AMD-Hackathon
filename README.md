@@ -86,16 +86,16 @@ After this step all operations will be done locally.
 
 ### New Version
 
-<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/11g.png">
-<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/12g.png">
-<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/13g.png">
-<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/14g.png">
-<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/15g.png">
-<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/16g.png">
-<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/17g.png">
-<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/18g.png">
-<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/19g.png">
-<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market/20g.png">
+<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/11g.png">
+<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/12g.png">
+<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/13g.png">
+<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/14g.png">
+<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/15g.png">
+<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/16g.png">
+<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/17g.png">
+<img width="100%" align="center" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/18g.png">
+<img width="100%" align="right" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/19g.png">
+<img width="100%" align="left" alt="Tech Based Suppy Chain" src="https://github.com/parth782/Google-AMD-Hackathon/blob/main/Krishi%20Market%20Screenshots/20g.png">
 
 ### Old Version
 
