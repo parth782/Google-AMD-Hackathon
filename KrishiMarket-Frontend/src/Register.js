@@ -1,509 +1,334 @@
-import React from "react"
-import ValidationError from './validationError'
-import AuthApiService from './services/auth-api-service'
-import TokenService from './services/token-service.js'
+import React from "react";
+import ValidationError from "./validationError";
+import AuthApiService from "./services/auth-api-service";
+import TokenService from "./services/token-service.js";
 
+import RadioGroup from "./components/RadioGroup";
+import { UserIcon } from "@heroicons/react/24/solid";
 
 class Register extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: {
+        value: "",
+        touched: false,
+      },
+      
+      bloodGroup: {
+        value: "",
+        touched: false,
+      },
+     city: {
+        value: "",
+        touched: false,
+      },
+      district: {
+        value: "",
+        touched: false,
+      },
+      
+      mobileNo: {
+        value: "",
+        touched: false,
+      },
+    };
+  }
 
-            user_name: {
-                value: "",
-                touched: false,
-            },
-            password: {
-                value: "",
-                touched: false,
-            },
-            repeatPassword: {
-                value: "",
-                touched: false,
-            },
-            farm_name: {
-                value: "",
-                touched: false,
-            },
-            street_address: {
-                value: "",
-                touched: false,
-            },
-            city: {
-                value: "",
-                touched: false,
-            },
-            state: {
-                value: "",
-                touched: false,
-            },
-            zip: {
-                value: "",
-                touched: false,
-            },
-            upi_id: {
-                value: "",
-                touched: false,
-            },
-            mobile_no: {
-                value: "",
-                touched: false,
-            },
-        };
+  // NAME
+  changeName(name) {
+    this.setState({
+      name: { value: name, touched: true },
+    });
+  }
+
+ 
+  validateName() {
+    const name = this.state.name.value.trim();
+    if (name.length === 0) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Name is required
+        </p>
+      );
+    } else if (name.length < 2) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Name must be at least 2 characters long
+        </p>
+      );
     }
+  }
 
-    changeUsername(user_name) {
-        this.setState({
-            user_name: { value: user_name, touched: true },
-        });
+
+  //////Blood Group
+  changeBloodGroup(bloodGroup) {
+    this.setState({
+      bloodGroup: { value: bloodGroup, touched: true },
+    });
+  }
+
+  validateBloodGroup() {
+    const bloodGroup = this.state.bloodGroup.value.trim();
+    if (bloodGroup.length === 0) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          BloodGroup is required
+        </p>
+      );
+    } else if (bloodGroup.length < 2) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          BloodGroup must be at least 2 characters long
+        </p>
+      );
     }
+  }
 
-    changePassword(password) {
-        this.setState({
-            password: { value: password, touched: true },
-        });
+  /////District
+  changeDistrict(district) {
+    this.setState({
+      district: { value: district, touched: true },
+    });
+  }
+  validateDistrict() {
+    const district = this.state.district.value.trim();
+    if (district.length === 0) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Street address is required
+        </p>
+      );
+    } else if (district.length < 2) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Street address be at least 2 characters long
+        </p>
+      );
     }
+  }
+  ////City
+  changeCity(city) {
+    this.setState({
+      city: { value: city, touched: true },
+    });
+  }
 
-    updateRepeatPassword(repeatPassword) {
-        this.setState({
-            repeatPassword: { value: repeatPassword, touched: true },
-        });
+  validateCity() {
+    const city = this.state.city.value.trim();
+    if (city.length === 0) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          City is required
+        </p>
+      );
+    } else if (city.length < 2) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          City must be at least 2 characters long
+        </p>
+      );
     }
+  }
 
-    validateUserName() {
-        const user_name = this.state.user_name.value.trim();
-        if (user_name.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>Username is required</p>;
-        } else if (user_name.length < 2) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Username must be at least 2 characters long
-                </p>
-            );
-        }
+
+
+
+
+  /////MOBILE NO
+  changemobileNo(mobile_no) {
+    this.setState({
+      mobileNo: { value: mobileNo, touched: true },
+    });
+  }
+  validateMobileNo() {
+    const mobile_no = this.state.Mbileno.value.trim();
+    if (mobile_no.length === 0) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Mobile No is required
+        </p>
+      );
+    } else if (mobile_no.length < 10 || !(mobile_no > 1000000000 && mobile_no < 9999999999)) {
+      return (
+        <p className="input-error" style={{ color: "red" }}>
+          Mobile No must be at least 10 characters long
+        </p>
+      );
     }
+  }
 
-    validatePassword() {
-        const password = this.state.password.value.trim();
-        if (password.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>Password is required</p>;
-        } else if (password.length < 6 || password.length > 72) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Password must be between 6 and 72 characters long
-                </p>
-            );
-        } else if (!password.match(/[0-9]/)) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Password must contain at least one number
-                </p>
-            );
-        }
+  updateUser = (event) => {
+    event.preventDefault();
+    //get the input from the form submission
+    const data = {};
+    //get the payload from the form submission
+    const formData = new FormData(event.target);
+    for (let value of formData) {
+      data[value[0]] = value[1];
     }
+    // console.log(data);
 
-    validateRepeatPassword() {
-        const repeatPassword = this.state.repeatPassword.value.trim();
-        const password = this.state.password.value.trim();
+    let {
+      name,
+      mobileNo,
+      city,
+      district,
+      bloodGroup
+    } = data;
+    //console.log(user_name, password, repeatPassword);
 
-        if (repeatPassword !== password) {
-            return <p className="input-error" style={{color:'white'}}>Passwords do not match</p>;
-        }
+    this.setState({ error: null });
+    AuthApiService.updatetUser({
+      name,
+      mobileNo,
+      city,
+      district,
+      bloodGroup
 
-    }
+    })
 
+      .then((response) => {
+        //console.log('user:', response)
+        TokenService.saveAuthToken(response.authToken);
+        TokenService.saveUserId(response.id);
+        window.location = "/add-item";
+      })
 
-    //////Farm name
-    changeFarmName(farm_name) {
-        this.setState({
-            farm_name: { value: farm_name, touched: true },
-        });
-    }
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
+  };
 
-    validateFarmName() {
-        const farm_name = this.state.farm_name.value.trim();
-        if (farm_name.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>Farm name is required</p>;
-        } else if (farm_name.length < 2) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Farm name must be at least 2 characters long
-                </p>
-            );
-        }
-    }
+  render() {
+    const msg = this.state.error ? (
+      <p style={{ color: "red" }}>{this.state.error}</p>
+    ) : (
+      <div></div>
+    );
 
+    return (
+      <div className="Fast">
+        <div className="Register">
+          <section id="signUpPage">
+            <h2>Profile</h2>
+            {/* <div className="mx-auto w-96 shadow my-1">
+              <RadioGroup
+                onChange={(option) => console.log(option)}
+                options={[
+                  <div className="flex flex-1 justify-around">
+                    <span>Farmer</span>
+                    <UserIcon className="w-4" />
+                  </div>,
+                  <div className="flex  flex-1 justify-around">
+                    <span>Consumer</span>
+                    <UserIcon className="w-4" />
+                  </div>,
+                ]}
+              />
+            </div> */}
 
-
-    /////street_address
-    changeStreetAddress(street_address) {
-        this.setState({
-            street_address: { value: street_address, touched: true },
-        });
-    }
-    validateStreetAddress() {
-        const street_address = this.state.street_address.value.trim();
-        if (street_address.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>Street address is required</p>;
-        } else if (street_address.length < 2) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Street address be at least 2 characters long
-                </p>
-            );
-        }
-    }
-    ////City
-    changeCity(city) {
-        this.setState({
-            city: { value: city, touched: true },
-        });
-    }
-
-    validateCity() {
-        const city = this.state.city.value.trim();
-        if (city.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>City is required</p>;
-        } else if (city.length < 2) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    City must be at least 2 characters long
-                </p>
-            );
-        }
-    }
-
-
-    /////State
-    changeState(state) {
-        this.setState({
-            state: { value: state, touched: true },
-        });
-    }
-
-    validateState() {
-        const state = this.state.state.value.trim();
-        if (state.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>State is required</p>;
-        } else if (state.length < 2) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    State must be at least 2 characters long
-                </p>
-            );
-        }
-    }
-
-    /////ZIP
-    changeZIP(zip) {
-        this.setState({
-            zip: { value: zip, touched: true },
-        });
-    }
-    validateZIP() {
-        const zip = this.state.zip.value.trim();
-        if (zip.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>ZIP is required</p>;
-        } else if (zip.length < 5) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    ZIP must be at least 5 characters long
-                </p>
-            );
-        }
-    }
-
-    /////UPI ID
-    changeUPIID(upi_id) {
-        this.setState({
-            upi_id: { value: upi_id, touched: true },
-        });
-    }
-    validateUPIID() {
-        const upi_id = this.state.upi_id.value.trim();
-        if (upi_id.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>UPI ID is required</p>;
-        }  
-        // var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-        // // Test the UPI ID against the regex
-        // if (!regex.test(upi_id)) {
-        //     return <p className="input-error" style={{color:'white'}}>Invalid UPI ID</p>;
-        // } 
-    }
-
-    /////MOBILE NO
-    changemobileNo(mobile_no) {
-        this.setState({
-            mobile_no: { value: mobile_no, touched: true },
-        });
-    }
-    validatemobileNo() {
-        const mobile_no = this.state.mobile_no.value.trim();
-        if (mobile_no.length === 0) {
-            return <p className="input-error" style={{color:'white'}}>Mobile No is required</p>;
-        } else if (mobile_no.length < 10) {
-            return (
-                <p className="input-error" style={{color:'white'}}>
-                    Mobile No must be at least 10 characters long
-                </p>
-            );
-        }
-    }
-
-    registerUser = (event) => {
-        event.preventDefault();
-        //get the input from the form submission
-        const data = {};
-        //get the payload from the form submission
-        const formData = new FormData(event.target);
-        for (let value of formData) {
-            data[value[0]] = value[1];
-        }
-        // console.log(data);
-
-        let { user_name,
-            password,
-            farm_name,
-            street_address,
-            city,
-            state,
-            zip,
-            upi_id,
-            mobile_no
-        } = data;
-        //console.log(user_name, password, repeatPassword);
+            <form className="registerForm" onSubmit={this.registerUser}>
+              <div className="errorMessage">{msg}</div>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                onChange={(e) => this.changeName(e.target.value)}
+                required
+              />
+              {this.state.name.touched && (
+                <ValidationError message={this.validateName()} />
+              )}
 
 
-        this.setState({ error: null })
-        AuthApiService.postUser({
-            user_name,
-            password,
-            farm_name,
-            street_address,
-            city,
-            state,
-            zip,
-            upi_id,
-            mobile_no
-        })
-
-            .then(response => {
-                //console.log('user:', response)
-                TokenService.saveAuthToken(response.authToken)
-                TokenService.saveUserId(response.id)
-                window.location = "/add-item"
-            })
-
-            .catch(res => {
-                this.setState({ error: res.error })
-            })
-    }
 
 
-    render() {
-        const msg = this.state.error ?
-            <p style={{ color: 'white' }}>
-                {this.state.error}
-            </p> :
-            <div></div>;
+              <label htmlFor="bloodGroup">Blood Group</label>
+              <select name="bloodGroup"
+                placeholder="Blood Group"
+                onChange={(e) => this.validateBloodGroup(e.target.value)}
+                required>
+                <option value="" selected>Select BloodGroup</option>
+                <option value="O+">O+</option>
 
-        return (
-            <div className="Fast">
-                <div className="Register">
-                    <section id="signUpPage">
-                        <h2>Sign up</h2>
-                        <form className="registerForm" onSubmit={this.registerUser}>
-                            <div className="errorMessage">
-                                {msg}
-                            </div>
-                            <label htmlFor="username">Username</label>
-                            <input
-                                type="text"
-                                name="user_name"
-                                placeholder="Username"
-                                onChange={(e) =>
-                                    this.changeUsername(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.user_name.touched && (
-                                <ValidationError
-                                    message={this.validateUserName()}
-                                />
-                            )}
+                <option value="A+">A+</option>
 
-                            <label>Password</label>
-                            <input
-                                type="Password"
-                                name="password"
-                                placeholder="Password"
-                                onChange={(e) =>
-                                    this.changePassword(e.target.value)
-                                }
-                                required
-                            />
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O-">O-</option>
 
-                            {this.state.password.touched && (
-                                <ValidationError
-                                    message={this.validatePassword()}
-                                />
-                            )}
+                <option value="A-">A-</option>
 
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
 
-                            <label>Repeat Password</label>
-                            <input
-                                type="Password"
-                                name="repeatPassword"
-                                placeholder="Repeat Password"
-                                onChange={(e) =>
-                                    this.updateRepeatPassword(e.target.value)
-                                }
-                                required
-                            />
+              </select>
+              {/* <input
+                type="text"
+                name="bloodGroup"
+                placeholder="Blood Group"
+                onChange={(e) => this.validateBloodGroup(e.target.value)}
+                required
+              /> */}
+              {this.state.bloodGroup.touched && (
+                <ValidationError message={this.validateBloodGroup()} />
+              )}
 
-                            {this.state.repeatPassword.touched && (
-                                <ValidationError
-                                    message={this.validateRepeatPassword()}
-                                />
-                            )}
+              <label htmlFor="city">City</label>
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                onChange={(e) => this.changeCity(e.target.value)}
+                required
+              />
+              {this.state.city.touched && (
+                <ValidationError message={this.validateCity()} />
+              )}
 
-                            <label htmlFor="farm_name">Farm name</label>
-                            <input
-                                type="text"
-                                name="farm_name"
-                                placeholder="Farm name"
-                                onChange={(e) =>
-                                    this.changeFarmName(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.user_name.touched && (
-                                <ValidationError
-                                    message={this.validateFarmName()}
-                                />
-                            )}
+              <label htmlFor="district">District</label>
+              <input
+                type="text"
+                name="district"
+                placeholder="District"
+                onChange={(e) => this.changeDistrict(e.target.value)}
+                required
+              />
+              {this.state.district.touched && (
+                <ValidationError message={this.validateDistrct()} />
+              )}
 
 
-                            <label htmlFor="street_address">Street address</label>
-                            <input
-                                type="text"
-                                name="street_address"
-                                placeholder="street address"
-                                onChange={(e) =>
-                                    this.changeStreetAddress(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.street_address.touched && (
-                                <ValidationError
-                                    message={this.validateStreetAddress()}
-                                />
-                            )}
+              <label htmlFor="mobileNo">Mobile No</label>
+              <input
+                type="text"
+                name="mobileNo"
+                placeholder="Mobile No"
+                onChange={(e) => this.changeMobileNo(e.target.value)}
+                required
+              />
+              {this.state.mobileNo.touched && (
+                <ValidationError message={this.validateMobileNo()} />
+              )}
 
-                            <label htmlFor="city">City</label>
-                            <input
-                                type="text"
-                                name="city"
-                                placeholder="city"
-                                onChange={(e) =>
-                                    this.changeCity(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.city.touched && (
-                                <ValidationError
-                                    message={this.validateCity()}
-                                />
-                            )}
+              <button
+                className="signup-button"
+                id="register-button"
+                type="submit"
+                style={{ opacity: "100% !important" }}
+                disabled={this.state.submitButtonDisabled}
+              >
+                Update
+              </button>
+            </form>
 
-                            <label htmlFor="state">State</label>
-                            <input
-                                type="text"
-                                name="state"
-                                placeholder="State"
-                                onChange={(e) =>
-                                    this.changeState(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.state.touched && (
-                                <ValidationError
-                                    message={this.validateState()}
-                                />
-                            )}
-
-                            <label htmlFor="zip">ZIP</label>
-                            <input
-                                type="text"
-                                name="zip"
-                                placeholder="ZIP"
-                                onChange={(e) =>
-                                    this.changeZIP(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.zip.touched && (
-                                <ValidationError
-                                    message={this.validateZIP()}
-                                />
-                            )}
-
-                            <label htmlFor="upi_id">UPI ID</label>
-                            <input
-                                type="text"
-                                name="upi_id"
-                                placeholder="UPI ID"
-                                onChange={(e) =>
-                                    this.changeUPIID(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.upi_id.touched && (
-                                <ValidationError
-                                    message={this.validateUPIID()}
-                                />
-                            )}
-
-                            <label htmlFor="mobile_no">Mobile No</label>
-                            <input
-                                type="text"
-                                name="mobile_no"
-                                placeholder="Mobile No"
-                                onChange={(e) =>
-                                    this.changemobileNo(e.target.value)
-                                }
-                                required
-                            />
-                            {this.state.mobile_no.touched && (
-                                <ValidationError
-                                    message={this.validatemobileNo()}
-                                />
-                            )}
-
-
-                            <button
-                                className="signup-button"
-                                id="register-button"
-                                type="submit"
-                                disabled={this.state.submitButtonDisabled}
-                            >
-                                Sign Up
-                            </button>
-                        </form>
-                        <div className="login">
-                            <p style={{ color: 'white' }}>
-                                Already have an account?
-                            </p>
-                            <p>
-                                <a href="/user/login" style={{ color: 'white', textDecoration: 'underline' }}>Log in here</a>
-                            </p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        );
-    }
+          </section>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Register;

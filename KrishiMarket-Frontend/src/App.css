@@ -1,7 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #02C762 0.89%,
+    #dae957 17.23%,
+    #cab32f 42.04%,
+    #67af8a 55.12%,
+    #e2e227 71.54%,
+    #e4e979 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #02C762 -43.27%,
+    #02C762 -21.24%,
+    #02C762 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #02C762 90.29%
+  );
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-gray-gradient {
+  background: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+}
+
+.bg-discount-gradient {
+  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  background: var(--black-gradient);
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(--black-gradient);
+}
+
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
 /* -------------------------------------
 CSS reset
 Is a short set of CSS rules that resets the styling of all HTML elements to a consistent baseline so the website will look the same on all browsers
 */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 * {
   margin: 0;
@@ -28,10 +170,9 @@ General styles (General Module, wrapping around the modules below)
 */
 
 body {
-  /* border: 3px solid white; */
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;;
+  font-family: 'Poppins','Montserrat', sans-serif;
   text-align: center;
   font-size: normal;
 }
@@ -39,16 +180,40 @@ body {
 /* Full-width input fields */
 
 input[type="text"], input[type="password"] {
-  width: 100%;
+  width: 90%;
+  border-radius:15px;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 15px 22px 0px;
   display: inline-flex;
   border: none;
-  background: white;
+  color:gray;
+  background-color: rgba(116, 113, 113, 0.234);
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
-  background-color: #ddd;
+  border: none;
+  color:white;
+  background-color: rgba(255, 255, 255, 0.086);
+}
+select {
+  width: 90%;
+  border-radius:15px;
+  padding: 15px;
+  margin: 5px 15px 22px 0px;
+  display: inline-flex;
+  border: none;
+  color:gray;
+  background-color: rgba(116, 113, 113, 0.234);
+}
+
+select:focus {
+  border: none;
+  color:white;
+  background-color: rgba(255, 255, 255, 0.086);
+}
+select option{
+  color:gray;
+  background-color: rgba(116, 113, 113, 0.234);
 }
 
 /* Set a style for the submit button */
@@ -57,7 +222,7 @@ button {
  
   margin: 15px 0px;
   background-color: pink;
-  color: black;
+  color: white;
   padding: 10px 12px;
   text-align: center;
   text-decoration: none;
@@ -79,16 +244,29 @@ button:hover {
 /* Add a blue text color to links */
 
 a {
-  font-size: 20px;
+  font-size: 1rem;
   text-decoration: none;
-  color: rgb(71, 30, 255);
+  color:#02C762; 
   padding: 15px;
-  font-weight: bolder;
 }
 
 a:hover {
-  color: purple;
-  font-weight: bolder;
+  color: #3db71b;
+  background-color: #e4f8ea;
+  border-radius:7px;
+}
+
+.navi a {
+  font-size: 1rem;
+  text-decoration: none;
+  color:#006c7c; 
+  padding: 15px;
+}
+
+.navi a:hover {
+  color: #57e97e;
+  background-color: #e4f8ea;
+  border-radius:7px;
 }
 
 h1 {
@@ -101,19 +279,19 @@ h2 {
   /* text-align:center; 
   font-size: 40px; */
   /* font-family: 'skolar-sans-latin-extended', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 2.25rem;
-  color: #4B6182;
+  color: white;
 }
 
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins','Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 2rem;
-  color: #292d33;
+  color: white;
 }
 
 h4 {
@@ -122,28 +300,28 @@ h4 {
   font-weight: 700;
   font-size: 1.0625rem;
   line-height: 2rem;
-  color: #373E40;
+  color: white;
   padding-top: 15px;
 }
 
 h5 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins','Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.09rem;
   text-align: center;
   line-height: 2rem;
-  color: #373E40;
+  color: white;
   padding-top: 15px;
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins','Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.0625rem;
   line-height: 2rem;
-  color: #373E40;
+  color: white;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -218,7 +396,7 @@ Content styles (Main Module)
   margin: 15px 0px;
   margin-left: 30%;
   margin-right: 30%;
-  background-color:#69ca89;
+  background-color:#02C762;
   color: black;
   padding: 10px 5px;
   text-align: center;
@@ -233,37 +411,7 @@ Content styles (Main Module)
   margin: 15px 0px;
   margin-left: 30%;
   margin-right: 30%;
-  background-color: #69ca89;
-  color: black;
-  padding: 10px 5px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 15px;
-  border: 1px solid #361f1f;
-  border-radius: 19px;
-}
-.show-button:hover {
-  /* opacity: 1; */
-  background-color: #FDDA0D;
-}
-.button-wrapper {
-  text-align: center;
-
-}
-.button-wrapper button, .button-wrapper a {
-display: inline-block;
-width:30%;
-margin-right: 0;
-margin-left: 0;
-}
-
-.button-wrapper a {
-  margin-left:10%;
-}
-
-.signup-button {
-  margin: 15px 0px;
-  background-color:#69ca89;
+  background-color:#02C762;
   color: black;
   padding: 10px 5px;
   text-align: center;
@@ -272,6 +420,38 @@ margin-left: 0;
   border: 1px solid #361f1f;
   border-radius: 190px;
   width: 30%;
+}
+.show-button:hover {
+  background-color: #f1f1c7;
+}
+
+.button-wrapper {
+  text-align: center;
+
+}
+.button-wrapper button, .button-wrapper a {
+display: inline-block;
+width:30%;
+margin-right: 20px;
+margin-left: 20px;
+}
+
+.button-wrapper a {
+  margin-left:10%;
+}
+
+.signup-button {
+  margin: 15px 0px;
+  background-color:#02b95b;
+  color: black;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #1f3536;
+  border-radius: 190px;
+  width: 30%;
+  opacity:100% !important;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -279,9 +459,9 @@ margin-left: 0;
 
 .go-button:hover {
   /* opacity: 1; */
-  background-color: #FDDA0D;
+  background-color: #f1f1c7;
   cursor: pointer;
-  color: black;
+  color: black
 }
 
 .Fast{
@@ -301,26 +481,21 @@ margin-left: 0;
 }
 
 .Login {
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
   color: white;
-  padding: 20px 20px;
+  padding: 15px 15px;
   text-align: center;
   display: block;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
-
-
   overflow: auto;
-  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
-
-
-  
 }
 
 @keyframes gradient {
@@ -336,29 +511,29 @@ margin-left: 0;
 }
 
 .wave {
-  background: rgb(255 255 255 / 25%);
+  background: rgba(247, 249, 250, 0.825);
   border-radius: 1000% 1000% 0 0;
   position: fixed;
   width: 200%;
   height: 12em;
   animation: wave 10s -3s linear infinite;
   transform: translate3d(0, 0, 0);
-  opacity: 0.8;
+  opacity: 0.1%;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .wave:nth-of-type(2) {
   bottom: -1.25em;
   animation: wave 18s linear reverse infinite;
-  opacity: 0.8;
+  opacity: 0.2;
 }
 
 .wave:nth-of-type(3) {
   bottom: -2.5em;
   animation: wave 20s -1s reverse infinite;
-  opacity: 0.9;
+  opacity: 0.2;
 }
 
 @keyframes wave {
@@ -383,6 +558,25 @@ margin-left: 0;
   }
 }
 
+.Login{
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 35%;
+  opacity:85%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 5px 5px;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  text-transform: uppercase;
+  background-attachment: fixed; 
+}
 .Login h2 {
   padding-bottom: 1em;
   color: white;
@@ -397,31 +591,85 @@ margin-left: 0;
 
 .Login input {
   border: solid 1px;
+  color: white;
 }
 
 .errorMessage {
-  color:red;
+  color:rgb(241, 150, 150);
 }
 
 
-.Register {
-  font-size: 20px;
+/* .Register {
+  font-size: 17px;
   text-decoration: none;
   color: white;
-  padding: 5px;
   text-align: center;
   display: block;
-  width: 90%;
+  width: 35%;
+  opacity:85%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
-
+  max-width: 100%;
+  padding: 5px 5px;
   overflow: auto;
-  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
+  text-transform: uppercase;
   background-attachment: fixed;
 }
+
+.Register form {
+  width: 80%;
+  margin: 5px auto;
+}
+
+.Register input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 5px 15px 0px;
+  display: inline-flex;
+  border: none;
+  text-transform: uppercase;
+  color:white;
+  background-color: rgb(6, 6, 6);
+}
+
+.Register input:hover{
+border: none;
+color:white;
+background-color: rgba(220, 214, 214, 0.068);
+}
+
+.Register h2 {
+  padding-bottom: 0.1em;
+  color: white;
+} */
+.Register{
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 35%;
+  opacity:85%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 5px 5px;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  text-transform: uppercase;
+  background-attachment: fixed; 
+}
+.Register h2 {
+  padding-bottom: 0.1em;
+  color: white;
+}
+
+
 
 .Register form {
   width: 90%;
@@ -430,59 +678,83 @@ margin-left: 0;
 
 .Register input {
   border: solid 1px;
-}
-
-.Register h2 {
-  padding-bottom: 1em;
   color: white;
 }
 
 
 /* AddItems component */
 .AddItems {
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
   color: white;
-  padding: 20px 20px;
   text-align: center;
   display: block;
-  width: 90%;
+  width: 35%;
+  opacity:85%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  max-width: 100%;
+  padding: 5px 5px;
+  padding-top:20px;
 
   overflow: auto;
-  background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  background-attachment: fixed;
+  text-transform: uppercase;
+  background-attachment: fixed; 
 }
 
 .AddItems input {
   border: solid 1px;
+  color: white;
+
 }
 
+.AddItems input:hover{
+  border: none;
+  color:white;
+  background-color: rgba(220, 214, 214, 0.068);
+}
 /* AddItems component */
 
 
 /* itemDetails component */
 .itemDetails {
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
-  color: black;
-  padding: 5px;
+  color: white;
   text-align: center;
   display: block;
-  width: 90%;
+  width: 55%;
+  opacity:85%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  max-width: 100%;
+  padding: 5px 5px;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(55, 55, 55) 3%, rgb(30, 33, 33) 38%, rgb(20, 20, 20) 68%, rgb(0, 0, 0) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  text-transform: uppercase;
+  background-attachment: fixed;
 }
 
 .itemDetails input {
-  border: solid 1px;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 5px 15px 0px;
+  display: inline-flex;
+  border: none;
+  text-transform: uppercase;
+  color:white;
+  background-color: rgb(6, 6, 6);
 }
-
+.itemDetails input:hover{
+  border: none;
+  color:white;
+  background-color: rgba(220, 214, 214, 0.068);
+}
 .itemDetails li {
   list-style-type: none;
 }
@@ -493,16 +765,23 @@ margin-left: 0;
 /* inventoryTable component */
 .inventoryTable{
   table-layout: auto;
-  width:90%;
+  width:70%;
   margin-left: auto;
   margin-right: auto;
+}
+
+th,tr{
+  color:white;
+  text-transform: uppercase;
 }
 
 .inventoryTable tbody tr td{
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  font-weight: bolder;
+  border-top: 1.7px solid #02b95b;
+  border-left: 1.7px solid #02b95b;
+  border-right: 1.7px solid #02b95b;
+  border-bottom: 1.7px solid #02b95b;
 }
 
 /* inventoryTable component */
@@ -522,7 +801,7 @@ margin-left: 0;
 }
 
 .nav h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins','Montserrat', sans-serif;
 }
 
 /* NavBar component */
@@ -532,29 +811,6 @@ margin-left: 0;
 Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
-
-.Footer {
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-  padding: 14px;
-  border-top: 1px solid lightgrey;
-  display: block;
-  list-style-type: none;
-}
-
-.Footer li {
-  display: inline-block;
-}
-
-.Footer li a {
-  text-decoration: none;
-  font-size: 170%;
-}
-
-.Footer li a:hover {
-  color: red;
-}
 
 /* -------------------------------------
 place all the desktop styles above this line
@@ -604,7 +860,7 @@ place all the mobile tables styles below this line
 
 @media only screen and (max-width: 480px) {
   body {
-    border: 3px solid green;
+    border: 3px solid #02b95b;
     height: 100vh;
   }
   a {
@@ -616,6 +872,12 @@ place all the mobile tables styles below this line
 
 @media only screen and (max-width: 320px) {
   body {
-    border: 3px solid purple;
+    border: 3px solid #02b95b
   }
+}
+
+.input-error{
+  font-size: 15px;
+  margin-top:-26px;
+
 }

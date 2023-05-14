@@ -1,48 +1,26 @@
 {
-  "name": "farmer-bazaar-server",
+  "name": "krishimarket-backend",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "16.10.0"
-  },
-  "main": "src/server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "mocha --require test/setup.js --watch",
-    "dev": "nodemon src/server.js",
-    "migrate": "postgrator --config postgrator-config.js",
-    "start": "node src/server.js",
-    "predeploy": "npm audit",
-    "deploy": "git push heroku master"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "debug": "^4.2.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "helmet": "^4.1.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.0",
-    "knex": "^2.4.0",
-    "migrate": "^1.7.0",
-    "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
-    "path": "^0.12.7",
-    "pg": "^8.4.2",
-    "postgrator": "^4.1.1",
-    "postgrator-cli": "^4.0.0",
-    "unirest": "^0.6.0",
-    "uuid": "^8.3.1",
-    "winston": "^3.3.3",
-    "xss": "^1.0.8"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "eslint": "^7.12.1",
-    "mocha": "^10.2.0",
-    "nodemon": "^2.0.6",
-    "supertest": "^6.0.0"
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.1",
+    "twilio": "^3.83.0"
   }
 }
