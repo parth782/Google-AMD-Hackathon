@@ -16,6 +16,7 @@ const Billing = () => (
       {/* gradient end */}
     </div>
 
+
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         Easily pay for your <br className="sm:block hidden" /> Vegies &
